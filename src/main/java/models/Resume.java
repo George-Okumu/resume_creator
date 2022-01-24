@@ -11,7 +11,7 @@ public class Resume {
     private String description;
 
     //Arraylist to store  instance of resumes
-    private static List<Resume> resumeCreated = new ArrayList<Resume>();
+    private static ArrayList<Resume> resumeCreated = new ArrayList<Resume>();
 
     public Resume(String title, String companyName, String location, String description) {
         this.title = title;
@@ -25,7 +25,7 @@ public class Resume {
         return title;
     }
 
-    public static List<Resume> getResumeCreated() {
+    public static ArrayList<Resume> getResumeCreated() {
         return resumeCreated;
     }
 
