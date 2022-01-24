@@ -1,0 +1,42 @@
+{{#partial "content"}}
+    <form action="resume/new" method="post">
+        <div class="from-purple-100 via-red-300 to-indigo-500 bg-gradient-to-br min-h-screen md:px-20 pt-6">
+            <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
+                <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">Create Your Resume</h1>
+                <div class="flex justify-center">
+                    <a class="px-4 py-3 rounded-lg text-white text-slate-900 text-sm bg-blue-400 hover:bg-blue-200" href="/">Home.</a>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex">
+                        <div class="w-1/2">
+                            <label for="title" class="text-lx font-serif">Job Title:</label>
+                            <input type="text" placeholder="title" name="title" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" required />
+                        </div>
+                        <div class="w-1/2">
+                            <label for="title" class="text-lx font-serif">company Name:</label>
+                            <input type="text" placeholder="company name" name="companyName" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" required/>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="title" class="text-lx font-serif">Company Location:</label>
+                        <div class="w-full">
+                            <input type="text" placeholder="location" name="location" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" required/>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="description" class="block mb-2 text-lg font-serif">Description:</label>
+                        <textarea name="description" cols="30" rows="10" placeholder="write here.." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md" required></textarea>
+                    </div>
+                    <button class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600">CREATE</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    {{#partial "footer"}}
+        <p>Resume creator@2021</p>
+    {{/partial}}
+{{/partial}}
+
+
+
+{{> layout.hbs}}
