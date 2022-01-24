@@ -1,0 +1,102 @@
+{{#partial "content"}}
+    <div class="min-h-screen from-purple-100 via-red-300 to-indigo-500 bg-gradient-to-br">
+        <h3 class="text-center text-bold text-lg text-white p-10">Resume Chamber, Keep creating more resumes!</h3>
+        <div class="flex justify-center">
+            <a class="px-4 py-3 rounded-lg text-white text-slate-900 text-sm bg-blue-400 hover:bg-blue-200" href="/">Home.</a>
+        </div>
+        {{#if resumes}}
+            {{#each resumes }}
+                <div class='flex items-center justify-center pt-10'>
+                    <div class='w-full max-w-lg px-10 py-8 mx-auto bg-white rounded-lg shadow-xl'>
+                        <h1 class="text-xl mb-10 text-center">Title |  {{ title }}</h1>
+                        <!-- THE ACCORDION WITH <details> <summary> HTML Tag -->
+                        <details class="w-full bg-white border border-blue-500 mb-3">
+                            <summary class="w-full bg-white text-dark flex justify-between px-4 py-3  after:content-['+']">Company Name |  {{ companyName }}</summary>
+<!--                            <p class="px-4 py-3">-->
+<!--                                Nunc posuere dapibus urna quis cursus. Mauris malesuada tincidunt diam vel placerat mi tincidunt ac. Nullam augue urna, venenatis ut blandit eget, auctor vel eros. In ut dolor ante-->
+<!--                            </p>-->
+                        </details>
+
+                        <details class="w-full bg-white border border-blue-500  mb-3">
+                            <summary class="w-full bg-white text-dark flex justify-between px-4 py-3 after:content-['+']">Location | {{ location }}</summary>
+<!--                            <p class="px-4 py-3">-->
+<!--                                Fusce sed laoreet ex. Aenean justo nisl, eleifend eget eleifend sit amet, imperdiet id libero. Suspendisse et tempus leo, et lacinia arcu. Etiam at ante in est efficitur fringilla eleifend nec tellus. Integer sed auctor lectus, nec ullamcorper arcu. Nullam nec eros elit. Nulla tempor massa ut quam elementum dignissim. Sed eu pulvinar est, vel vehicula dolor. Pellentesque in ante vel elit facilisis consectetur eu id felis-->
+<!--                            </p>-->
+                        </details>
+
+                        <details class="w-full bg-white border border-blue-500 cursor-pointer mb-3">
+                            <summary class="w-full bg-white text-dark flex justify-between px-4 py-3  after:content-['+']">
+                                Description *click me to read more
+                            </summary>
+                            <p class="px-4 py-3">
+                                {{ description }}
+                            </p>
+                        </details>
+
+                        <!-- THE CSS -->
+                        <style>
+                details summary::-webkit-details-marker {
+                display: none;
+            }
+
+
+            details[open] summary {
+                background: blue;
+                color: white
+            }
+
+            details[open] summary::after {
+                content: "-";
+            }
+
+            details[open] summary ~ * {
+                animation: slideDown 0.3s ease-in-out;
+            }
+
+            details[open] summary p {
+                opacity: 0;
+                animation-name: showContent;
+                animation-duration: 0.6s;
+                animation-delay: 0.2s;
+                animation-fill-mode: forwards;
+                margin: 0;
+            }
+
+            @keyframes showContent {
+                from {
+                opacity: 0;
+                height: 0;
+                }
+                to {
+                opacity: 1;
+                height: auto;
+                }
+            }
+            @keyframes slideDown {
+                from {
+                opacity: 0;
+                height: 0;
+                padding: 0;
+                }
+
+                to {
+                opacity: 1;
+                height: auto;
+                }
+            }
+        </style>
+
+
+                        <div class="text-right py-4 text-red-600">Delete</div>
+                    </div>
+                </div>
+            {{/each}}
+        {{else}} <!--no resumes added-->
+            <p class="text-center text-bold text-lg text-red-600 p-10">No Resumes Added. <span>    <a href="/creator">Create one</a></span></p>
+        {{/if}}
+    </div>
+
+
+{{/partial}}
+
+{{> layout.hbs}}
